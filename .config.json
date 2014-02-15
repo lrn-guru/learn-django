@@ -2,6 +2,7 @@
 	"name": "django",
 	"short_description": "An introduction to Django, a Python web framework",
 	"difficulty": 2,
+	"introduction": "Welcome to the `lrn` Django tutorial! We will be installing Django, setting up a sample project, and configuring a simple data schema. Finally, we will use the Django administration interface to add data to our application. Sound exciting? Let's get started!",
 	"lessons": [
 		{
 			"name": "Getting Started",
