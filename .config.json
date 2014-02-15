@@ -45,7 +45,7 @@
 					"instruction": "Now we'll write a simple python view. Open a file named `views.py` and add the following lines:\n\nfrom django.http import HttpResponse\n\ndef home(request):\n\treturn HttpResponse('Hello World!')",
 					"hint": "`views.py` should be on the same level as urls.py.",
 					"test": "hello_world"
-				},
+				}
 			]
 		}
 	]

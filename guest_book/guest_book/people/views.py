@@ -1,3 +1,9 @@
-from django.shortcuts import render
+from django.http import HttpResponse
+from .models import Person
 
-# Create your views here.
+def home(request):
+    people = Person.objects.all()
+    summary = ''
+    for person in people:
+        summary += person.name + ' says ' + person.message + '.<br>'
+    return HttpResponse(summary)
