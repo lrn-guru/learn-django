@@ -1,6 +1,7 @@
 {
 	"name": "django",
 	"short_description": "An introduction to Django, a Python web framework",
+	"difficulty": 2,
 	"lessons": [
 		{
 			"name": "Getting Started",
