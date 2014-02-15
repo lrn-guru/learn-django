@@ -1,5 +1,5 @@
 """
-Django settings for project_name project.
+Django settings for phonebook project.
 
 For more information on this file, see
 https://docs.djangoproject.com/en/1.6/topics/settings/
@@ -17,7 +17,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 # See https://docs.djangoproject.com/en/1.6/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '6ic^c0c!*h)$#qedmkheg(+3t2&trp9uc5n1l_*76$xh*z&4cl'
+SECRET_KEY = '+g)u3@y_7g7oh@q_r(*4cq-bovya_shisrptx++n_(zif-jq85'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -36,7 +36,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'sampleapp',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -48,9 +47,9 @@ MIDDLEWARE_CLASSES = (
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 )
 
-ROOT_URLCONF = 'project_name.urls'
+ROOT_URLCONF = 'phonebook.urls'
 
-WSGI_APPLICATION = 'project_name.wsgi.application'
+WSGI_APPLICATION = 'phonebook.wsgi.application'
 
 
 # Database
