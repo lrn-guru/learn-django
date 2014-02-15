@@ -1,0 +1,51 @@
+{
+	"name": "django",
+	"short_description": "An introduction to Django, a Python web framework",
+	"lessons": [
+		{
+			"name": "Getting Started",
+			"branch": "getting-started",
+			"completion": "So far so good. You now have a functioning Django server. In the next lesson, we'll create our first webpage.",
+			"tasks": [
+				{
+					"instruction": "First, use pip to install Django.",
+					"hint": "Enter `sudo pip install django`.",
+					"test": "pip_install"
+				},
+				{
+					"instruction": "Now, use the django-admin.py script to start a project. Enter django-admin.py startproject <name>.",
+					"hint": "Make sure django-admin.py is on your $PATH. Starting a trolley app would look like `django-admin.py startproject trolley`.",
+					"test": "startproject"
+				},
+				{
+					"instruction": "Now that you have a starting application, test your configuration by running `<project_name>/manage.py runserver.",
+					"hint":
+						"Try changing directories to your project and running `python manage.py runserver`.",
+					"test": "runserver"
+				}
+			]
+		},
+		{
+			"name": "Writing your first view",
+			"branch": "first-view",
+			"completion": "Great job! If you open `localhost:8000` in a web browser, you'll see the Django equivalent of `hello world`. In our next lesson, we'll explore Django apps and create a database.",
+			"tasks": [
+				{
+					"instruction": "As you might have noticed, the 'It worked!' page said 'you are seeing this page because you have not configured any urls'. This is referring to the urls.py in <project_name>/<project_name>. Change to that directory and look at urls.py using `cat`.",
+					"hint": "To get to the right directory, enter:\n`cd <project_name>/<project_name>`\nAnd to look at urls.py:\n`cat urls.py`.",
+					"test": "cat_urls"
+				},
+				{
+					"instruction": "On the fourth line, you'll notice a url that is commented out. Uncomment it, and change the middle string to 'views.home' from '<project_name.views.home>.",
+					"hint": "The urls.py file should look like this when you're done:\nfrom django.conf.urls import patterns, include, url\n\nfrom django.contrib import admin\nadmin.autodiscover()\n\nurlpatterns = patterns('',\n\t# Examples:\n\turl(r'^$', 'views.home', name='home'),\n\t...).\n\nDon't worry about the `admin`. We'll cover that later.",
+					"test": "urls_uncomment"
+				},
+				{
+					"instruction": "Now we'll write a simple python view. Open a file named `views.py` and add the following lines:\n\nfrom django.http import HttpResponse\n\ndef home(request):\n\treturn HttpResponse('Hello World!')",
+					"hint": "`views.py` should be on the same level as urls.py.",
+					"test": "hello_world"
+				},
+			]
+		}
+	]
+}
