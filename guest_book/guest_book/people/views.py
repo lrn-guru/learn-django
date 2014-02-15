@@ -1,5 +1,5 @@
 from django.http import HttpResponse
-from .models import Person
+from guest_book.people.models import Person
 
 def home(request):
     people = Person.objects.all()
