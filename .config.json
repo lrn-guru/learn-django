@@ -16,7 +16,7 @@
 				},
 				{
 					"instruction": "Now, use the django-admin.py script to start a project. Enter django-admin.py startproject guestbook.",
-					"hint": "Make sure django-admin.py is on your $PATH. Starting a trolley app would look like `django-admin.py startproject guestbook`.",
+					"hint": "Make sure django-admin.py is on your $PATH. Starting a guestbook app would look like `django-admin.py startproject guestbook`.",
 					"test": "startproject"
 				},
 				{
