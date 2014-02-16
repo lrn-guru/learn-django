@@ -15,12 +15,12 @@
 					"test": "pip_install"
 				},
 				{
-					"instruction": "Now, use the django-admin.py script to start a project. Enter django-admin.py startproject <name>.",
-					"hint": "Make sure django-admin.py is on your $PATH. Starting a trolley app would look like `django-admin.py startproject trolley`.",
+					"instruction": "Now, use the django-admin.py script to start a project. Enter django-admin.py startproject guestbook.",
+					"hint": "Make sure django-admin.py is on your $PATH. Starting a trolley app would look like `django-admin.py startproject guestbook`.",
 					"test": "startproject"
 				},
 				{
-					"instruction": "Now that you have a starting application, test your configuration by running `<project_name>/manage.py runserver.",
+					"instruction": "Now that you have a starting application, test your configuration by running `guestbook/manage.py runserver.",
 					"hint":
 						"Try changing directories to your project and running `python manage.py runserver`.",
 					"test": "runserver"
@@ -33,18 +33,23 @@
 			"completion": "Great job! If you open `localhost:8000` in a web browser, you'll see the Django equivalent of `hello world`. In our next lesson, we'll explore Django apps and create a database.",
 			"tasks": [
 				{
-					"instruction": "As you might have noticed, the 'It worked!' page said 'you are seeing this page because you have not configured any urls'. This is referring to the urls.py in <project_name>/<project_name>. Change to that directory and look at urls.py using `cat`.",
-					"hint": "To get to the right directory, enter:\n`cd <project_name>/<project_name>`\nAnd to look at urls.py:\n`cat urls.py`.",
+					"instruction": "Now that we have a project, it's time to write our first view. Go 2 directories in to the project created, into `guestbook/guestbook`. Make a new file with the following content:\n\nfrom django.http import HttpResponse\n\ndef home(request):\n\treturn HttpResponse('Hello world!')",
+					"hint": "Put views.py in the same directory as urls.py and settings.py.",
+					"test": "views"
+				},
+				{
+					"instruction": "Now that we have written a view, we will hook it up to our project by modifying `urls.py`. Let's take a look at the default urls.py using `cat`.",
+					"hint": "`urls.py` is in `guestbook/guestbook`. To look at urls.py, enter:\n\n`cat urls.py`.",
 					"test": "cat_urls"
 				},
 				{
-					"instruction": "On the fourth line, you'll notice a url that is commented out. Uncomment it, and change the middle string to 'views.home' from '<project_name.views.home>.",
-					"hint": "The urls.py file should look like this when you're done:\nfrom django.conf.urls import patterns, include, url\n\nfrom django.contrib import admin\nadmin.autodiscover()\n\nurlpatterns = patterns('',\n\t# Examples:\n\turl(r'^$', 'views.home', name='home'),\n\t...).\n\nDon't worry about the `admin`. We'll cover that later.",
+					"instruction": "What we want to do is enable the `home` view by uncommenting the fourth line. Remove the `#` symbol to uncomment it.",
+					"hint": "The urls.py file should look like this when you're done:\nfrom django.conf.urls import patterns, include, url\n\nfrom django.contrib import admin\nadmin.autodiscover()\n\nurlpatterns = patterns('',\n\t# Examples:\n\turl(r'^$', 'guestbook.people.views.home', name='home'),\n\t...).\n\nDon't worry about the `admin`. We'll cover that later.",
 					"test": "urls_uncomment"
 				},
 				{
-					"instruction": "Now we'll write a simple python view. Open a file named `views.py` and add the following lines:\n\nfrom django.http import HttpResponse\n\ndef home(request):\n\treturn HttpResponse('Hello World!')",
-					"hint": "`views.py` should be on the same level as urls.py.",
+					"instruction": "Now it's time to run our server again. Run manage.py runserver and the server should start up on port 8000.')",
+					"hint": "`manage.py` is one level up from the `views.py` you just wrote, so you can run the server simply by typing `python ../mange.py runserver`.",
 					"test": "hello_world"
 				}
 			]
