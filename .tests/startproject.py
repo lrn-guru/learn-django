@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 from subprocess import check_output
 
 files = check_output('find .')
