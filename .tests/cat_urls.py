@@ -1,7 +1,8 @@
-from subprocess import check_output, CalledProcessError
+#!/usr/bin/env python
+import sys
 
-try:
-	watch_for_command('cat urls.py')
+command = sys.argv[-1]
+if 'cat' in command and 'urls.py' in command:
 	exit(0)
-except CalledProcessError:
+else:
 	exit(1)

@@ -1,9 +1,8 @@
-from subprocess import check_output, CalledProcessError
+#!/usr/bin/env python
+from subprocess import check_output, CalledProcessError, STDOUT
 
-
-def run():
-    try:
-        check_output('django-admin.py --version'.split())
-        return 'success'
-    except CalledProcessError:
-        return 'failure'
+try:
+	check_output('django-admin.py --version'.split(), stderr=STDOUT)
+	exit(0)
+except (CalledProcessError, OSError):
+	exit(1)
